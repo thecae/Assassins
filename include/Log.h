@@ -1,23 +1,22 @@
 #ifndef ASSASSINS_V2_LOG_H
 #define ASSASSINS_V2_LOG_H
 
-#include <sstream>
 #include <fstream>
+#include <sstream>
 
 class Log {
 private:
-    std::stringstream pLog;
-    std::stringstream aLog;
+  std::stringstream pLog;
+  std::stringstream aLog;
 
 public:
-    explicit Log();
+  explicit Log();
 
-    ~Log();
+  ~Log();
 
-    void playerLog(const std::string &info);
+  void playerLog(const std::string &info);
 
-    void activityLog(const std::string &category, const std::string &info);
+  void activityLog(const std::string &category, const std::string &info);
 };
 
-
-#endif //ASSASSINS_V2_LOG_H
+#endif // ASSASSINS_V2_LOG_H

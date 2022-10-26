@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>McTyeire Assassins</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="174b54ed-c907-4a32-b02a-d0301944f29d" class="page sans"><header><h1 class="page-title">McTyeire Assassins</h1></header><div class="page-body"><p id="23d82ce2-3e01-4829-8ff0-4fc7d0922003" class="">Welcome to the annual McTyeire Assassins event!  Here you find the list of rules that regulate the game.</p><h1 id="ee487fc9-1da3-40e2-995f-c33fa606765c" class="">What is Assassins?</h1><p id="3324623c-1faf-4acf-9ca8-daa4b7226e8b" class=""><strong>Assassins</strong> is a game of traps and trickery that challenges you to find a given target and “eliminate” them.  This game is the ultimate test of your situational awareness, people-watching, open-source intelligence gathering, and network-creation.  While you’re hunting your target, you will have someone hunting you, so be careful!</p><h1 id="b4dd9344-79ae-412f-a641-9cb9e7694234" class="">Before the Game</h1><h3 id="58659d10-2309-441b-b021-0ea690b62675" class="">Signing Up</h3><p id="77eec7a5-7628-4100-bfa2-f70429f65455" class="">The game is free to play and limited to McTyeire residents and known associates.  Sign-ups must be registered to the link below.</p><figure id="e1494c27-f28d-42f9-aa37-f8115255d36e"><a href="https://forms.gle/LsdMwgGF1jDEuAqcA" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Forms: Sign-in</div></div><div class="bookmark-href"><img src="https://accounts.google.com/favicon.ico" class="icon bookmark-icon"/>https://forms.gle/LsdMwgGF1jDEuAqcA</div></div></a></figure><p id="558584d4-bf65-4685-b0fd-08c85e124235" class="">The deadline to sign up for the game is <em><em><em><em><em><em><em><em><em><em><em><em><em>Sunday, October 30th 2022 at 12:00PM</em></em></em></em></em></em></em></em></em></em></em></em></em>.</p><h3 id="4817634d-9ab4-4690-b407-94bab04bf4b6" class="">Communication via GroupMe</h3><p id="b60015c9-ad36-4856-ab0c-4555799fae94" class="">After your registration is complete, you will be added into the McTyeire Assassins GroupMe, which will contain all the players of the game and the Game Master.  This chat will contain all the updates throughout the game.</p><p id="658bfc8a-ce53-46d4-b5fa-0d074639bdd8" class="">In this chat, you are required to have your first and last name as well as a reasonably-identifying picture of yourself.  This is for other players to have a basic identification of who you are.</p><p id="8a0f0f08-88f1-45c8-8eff-7851fde94c1e" class="">All official communication for this game will occur via GroupMe. The Game Master will message players individually about targets through GroupMe, but will announce durations and player count through the group chat. Once a player has eliminated their target, they must post about it in the group chat within the same calendar day of the kill. Creativity and embellishment of the kill is encouraged. In addition, if anybody wants to provide tips about the whereabouts of players, they can either alert people through the group chat or contact the Game Master, who will enlighten the others.</p><h1 id="0ba8281b-6afd-430a-9dbf-74591c3afe8b" class="">The Game</h1><h3 id="639ac6f5-6e8c-41cc-9e08-b25a4b155ae8" class="">Kickoff - The Start of the Game</h3><p id="b19d3a95-df94-4679-9221-0e2b8cf2ee6d" class="">On Monday, October 31st at 12:00AM, the Game Master will commence sending out your targets.  Based on the number of players, this could take upwards of 45 minutes to ensure that everyone is properly assigned their target.  The game will officially begin at <em><em><em><em><em><em><em><em><em>Monday, October 31st at 7:00AM</em></em></em></em></em></em></em></em></em>.</p><p id="88473b82-242b-402b-9bf2-7c713050bc03" class="">Once your target has been eliminated, your target should tell you the name of their target.  This becomes your new target.  The Game Master will also confirm the name of this target once the kill is confirmed and documented.  This cycle will repeat until the end of the game.</p><h3 id="26bbf846-55ca-47f3-bc4c-86596398b9c3" class="">Eliminating a Target</h3><p id="4d597511-dcba-4d47-a67b-09f10e185508" class="">In order to eliminate your target, you must <em><em><em>tag</em></em></em> them with a spoon.  This tag must be on the body.  Tagging loose articles of clothing, backpacks, etc. do not count.  The spoon must be held and cannot be thrown.</p><p id="2f1bf424-86d1-4378-9e89-f44d7eccba12" class="">To verify the elimination, send the Game Master a picture of your target and the location of the attack to verify the elimination.  You are <strong><strong><strong>not</strong></strong></strong> allowed to go after your next target until the Game Master has confirmed the elimination and officially provided the next target.</p><p id="990adc4d-4743-4134-b5f1-f2bdd995957b" class="">Once you have eliminated your target, post about your work in the GroupMe!  Detailed accounts of the elimination, pictures, and videos are all highly encouraged.</p><h3 id="81bbffc1-f0ad-4b4d-a1ac-6c799cce41dc" class="">Avoiding Being Eliminated</h3><p id="ed83a0b0-1dc3-4b97-8650-514063805a1a" class="">The easy (and extremely obvious) method to not get eliminated is to just not get tagged with a spoon.  However, if you are being chased by your assassin, you have a shield.  You can use a sock as a defense mechanism; if you hit your target with a sock they become “stunned” for five minutes and cannot attack nor pursue you. This grace period is fully based on the honor system, so please be reasonable and honest when using this system.  The sock is allowed to be thrown or used in the hands of the defender.</p><h3 id="48c77776-833f-4831-9791-04029df4a305" class="">Safe Zones</h3><p id="5efa1a33-98f3-489a-a4d0-54ed6a3673ba" class="">Below is a list of “safe zones” for this game; you cannot be killed in these regions.</p><ul id="dff7f33d-c48b-40f8-b8f2-1e25346c0583" class="bulleted-list"><li style="list-style-type:disc"><em>Your own room and communal bathrooms</em> (not your friend’s room, not the hallway, not the common rooms)</li></ul><ul id="fa0cae4a-ff9d-4caa-9d8b-cea039854456" class="bulleted-list"><li style="list-style-type:disc"><em>Fraternity / Sorority Chapter</em> (only in the room and time they occur)</li></ul><ul id="c3301a1e-a607-4798-92bf-f74cbbc60a83" class="bulleted-list"><li style="list-style-type:disc"><em><em><em><em><em><em><em><em><em>Religious Gatherings</em></em></em></em></em></em></em></em></em> (only in the time and room they occur)</li></ul><ul id="d66bc22a-66d1-40eb-9b42-42c8f8f8d014" class="bulleted-list"><li style="list-style-type:disc"><em><em><em><em><em><em><em><em><em><em><em><em><em><em>Official Student Organization Meetings </em></em></em></em></em></em></em></em></em></em></em></em></em></em>(only in the time and room they occur)</li></ul><ul id="4f7d276d-409d-445a-a704-7cdbf4ceaac9" class="bulleted-list"><li style="list-style-type:disc"><em>Classrooms when a class/test are actively occurring</em> (classrooms not being used for class-time or outside the classroom are fair game)</li></ul><ul id="51bbf63a-835d-474d-a2ca-7e087adc47c9" class="bulleted-list"><li style="list-style-type:disc">If a Blair student has an instrument <em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong><em><strong>out of the case</strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em></strong></em>, they are granted temporary immunity (this immunity will be removed if exploited)</li></ul><p id="9f3298c7-cb34-43ad-acb2-49d683ee7e21" class="">In general, remember to apply basic common sense. If your target is clearly in a situation where they shouldn’t be bothered (i.e. a very serious looking discussion with a professor), it would be wise to find another time to catch them.</p><h3 id="46131108-8df7-4211-acb2-1b8160ca8195" class="">Rounds</h3><p id="125afc08-8651-4512-84df-857c3770922a" class="">To ensure that the game continues to progress, rounds have been instantiated throughout the game.  Every assassin must make at least one kill in the duration of the round or they will be eliminated.  Rounds end <em><em><em><em><em><em><em><em><em><em><em><em><em>every Sunday at 11:59PM</em></em></em></em></em></em></em></em></em></em></em></em></em>.  At the end of each round, the Game Master will reassign targets as necessary and announce various stats in the game such as the number of players left.</p><h3 id="78a7152c-6449-47b7-8d61-804ebbf29f2b" class="">Hints</h3><p id="f7284b01-8f06-469c-89f5-d5df6d0cbce8" class="">Each player is granted <em>two</em> hints and may use them throughout the game to request information about their assassin or their target.</p><h1 id="df9e0b8a-d0f2-4357-a4d0-6578c42558aa" class="">Prizes</h1><p id="fcdc4163-c520-449a-b7c4-97418e3c01b0" class="">Besides eternal glory as the most crafty, resourceful, and adversarial assassin to ever live in McTyeire, prizes will be given to the following players:</p><ul id="bbff3d7f-243d-4426-833b-45f62e76fe39" class="bulleted-list"><li style="list-style-type:disc">The winner of the game</li></ul><ul id="0322c211-4115-420d-8ef9-e90903fe527d" class="bulleted-list"><li style="list-style-type:disc">The player with the most kills</li></ul><ul id="77ecc670-24d8-4051-8c75-e8b3ed81caa0" class="bulleted-list"><li style="list-style-type:disc">The best kill story</li></ul><ul id="4697235f-3417-4573-a3b9-b1709a1ea1c8" class="bulleted-list"><li style="list-style-type:disc">The first player to deduce the target everyone received at the start of the game — only two attempts are offered at getting this completed.</li></ul></div></article></body></html>
